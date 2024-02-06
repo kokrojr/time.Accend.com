@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME | Technical Institute for Many Empowerment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- FA -->
+    <script src="https://kit.fontawesome.com/2e37c4d39c.js" crossorigin="anonymous"></script>
+    <!-- BI -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        jQuery(function($){
+            var $header = $('.header');
+            var $backToTopBtn = $('.back-to-top-btn');
+            var $footer = $('.footer');
+    
+            $(window).scroll(function(event){
+                var $current = $(this).scrollTop();
+    
+                // Show/hide header
+                if ($current > 0) {
+                    $header.addClass('hide-header');
+                } else {
+                    $header.removeClass('hide-header');
+                }
+    
+                // Show/hide back to top button
+                var footerPosition = $footer.offset().top;
+                if ($current > footerPosition - $(window).height()) {
+                    $backToTopBtn.removeClass('hide-btt-btn');
+                } else {
+                    $backToTopBtn.addClass('hide-btt-btn');
+                }
+            });
+        });
+    </script>
+    
+    <!-- <script>
+        jQuery(function($){
+            var $header = $('.header');
+            
+            $(window).scroll(function(event){
+                var $current = $(this).scrollTop();
+                if ($current > 0) {
+                    $header.addClass('hide-header');
+                } else {
+                    $header.removeClass('hide-header');
+                }
+            });
+            var $backToTopBtn = $('.back-to-top-btn');
+            $(window).scroll(function(event){
+                var $current = $(this).scrollTop();
+                if ($current > 1500) {
+                    $backToTopBtn.removeClass('hide-btt-btn');
+                } else {
+                    $backToTopBtn.addClass('hide-btt-btn');
+                }
+            });
+        });
+    </script> -->
+</head>
+<body class="home-page">
+
+    <!--
+        Website Development and Management Information
+    
+        - Site Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the site's features, ensuring a user-friendly experience and seamless functionality.
+    
+        - Site Management: Managed by Accend Engineering & Technology LLC.
+        The website undergoes regular maintenance and updates. Our management includes content updates, performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+        - Contact Information: For inquiries, or feedback regarding the website, please contact us at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+        Note: This comment is for informational purposes and is not visible to the website's end-users. It serves as a documentation of the development and management responsibilities of Accend.
+    -->
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="wrapper d-flex f-align-center">
+            <div class="logo">
+                <img src="Images/Time logo.jpg" alt="logo">
+            </div>
+            <!-- Main navigation -->
+            <nav>
+                <ul id="nav-list" class="nav-list d-flex">
+                    <li>
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li>
+                        <a href="/public/initiatives.html" class="nav-link">Initiatives</a>
+                    </li>
+                    <!-- Dropdown 1 of 2 -->
+                    <li class="our-work dropdown">
+                        <a href="/public/our-work.html" class="nav-link">Our Work
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/public/our-work/child-protection.html">Child protection</a>
+                            </li>
+                            <li>
+                                <a href="/public/our-work/education-poverty.html">Educational poverty</a>
+                            </li>
+                            <li>
+                                <a href="/public/our-work/girls-education.html">Girls eduction</a>
+                            </li>
+                            <li>
+                                <a href="/public/our-work/child-rights.html">Child rights</a>
+                            </li>
+                            <li>
+                                <a href="/public/our-work/orphan-support.html">Orphan support</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown 2 of 2 -->
+                    <li class="dropdown">
+                        <a href="/public/resources.html" class="nav-link">Resources
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/public/resources/blog/news-events.html">News & Events</a>
+                            </li>
+                            <li>
+                                <a href="/public/resources/reports/annual-reports.html">Annual Reports</a>
+                            </li>
+                            <li>
+                                <a href="/public/resources/ways-to-help.html">Ways to help</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- / -->
+                    <li>
+                        <a href="/public/about-us.html" class="nav-link">About us</a>
+                    </li>
+                    <li>
+                        <a href="/public/gallery.html" class="nav-link">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="/public/contact-us.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Donate button -->
+            <div class="cta">
+                <a href="/public/get-involve/donate.html" id="btn-donate" class="pri-cta donate-btn" role="button">Donate</a>
+            </div>
+            <!-- Button open side menu on mobile -->
+            <button type="button" aria-label="Open menu" id="mobile-nav-menu-btn" class="mobile-nav-menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+        <!-- END HEADER -->
+    </header>
+
+    <!-- Back-to-Top Button - Float bottom right -->
+    <div id="back-to-top-btn" class="back-to-top-btn hide-btt-btn">
+        <button type="button" title="back-to-top-btn" class="pri-cta">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="wrapper d-flex f-align-center f-justify-center fd-column">
+            <h1>Empowering Futures<br>One Child at a TIME</h1>
+            <p>
+                Educational poverty is a pressing global issue that affects countless 
+                children, leaving them with limited opportunities and a bleak future.
+                At TIME, we are building a world where no child is left behind.
+            </p>
+            <div class="cta-box">
+                <a href="/public/initiatives.html" class="pri-cta-with-icon">Our initiatives
+                    <i class='bx bx-chevrons-right'></i>
+                </a>
+                <a href="/public/resources/ways-to-help.html" class="sec-cta">Get involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="sect cs-flex-2">
+        <div class="wrapper d-flex f-align-center f-justify-center">
+            <div class="col-2 image-box">
+                <div class="main-image"></div>
+                <div class="accent-image"></div>
+            </div>
+            <div class="col-2 text-box">
+                <h6>About us</h6>
+                <h3>
+                    We're helping the Underprivileged in Liberia!
+                </h3>
+                <p>
+                    The Technical Institute For Many Empowerment (TIME) Inc. is a registered Liberian non-profit humanitarian
+                    organization with a steadfast commitment to uplifting the underprivileged, with a particular focus on women and
+                    children residing in remote towns and villages. Our core mission is to foster positive change in Liberia and around
+                    the world through comprehensive welfare initiatives spanning education, healthcare, livelihood support, and women's
+                    empowerment. We strive to make a meaningful impact on the lives of those in underserved communities, promoting
+                    inclusivity and empowerment as we work toward a brighter, more equitable future.
+                </p>
+                <a href="/public/about-us.html" class="pri-cta-with-icon">Learn more
+                    <i class='bx bx-chevrons-right'></i>
+                </a>
+            </div>
+            <div class="bg-image"></div>
+        </div>
+    </section>
+
+    <!-- OUR NEED ASSESSMENT -->
+    <section class="sect cs-grid-4-data-target">
+        <div class="wrapper grid">
+            <div class="col-4 d-flex f-align-center f-justify-center fd-column">
+                <h4 class="cap-each" data-target="7000">0</h4>
+                <p>Children in Rural Liberia in Need of School Materials</p>
+            </div>
+            <div class="col-4 d-flex f-align-center f-justify-center fd-column">
+                <h4 class="cap-each" data-target="1500">0</h4>
+                <p>Schools in Remote Villages Lack Basic Infrastructure</p>
+            </div>
+            <div class="col-4 d-flex f-align-center f-justify-center fd-column">
+                <h4 class="cap-each" data-target="1000">0</h4>
+                <p>Orphans Across Liberia Hoping for a Better Future</p>
+            </div>
+            <div class="col-4 d-flex f-align-center f-justify-center fd-column last-dt">
+                <h4 class="cap-each"  data-target="980">0</h4>
+                <p>Girls in remote villages lack access to Opportunities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR IMPACT AREAS -->
+    <section class="sect cs-grid-3-hover-box">
+        <div class="wrapper">
+            <div class="headline">
+                <h6>Our work</h6>
+                <h3>Areas We're Making<br>positive Impact!</h3>
+            </div>
+            <div class="grid">
+                <div class="card child-protection">
+                    <div class="text-box"></div>
+                    <h4 class="title cap-each">Measles Campaign and<br>Child protection</h4>
+                    <div class="hover-text">
+                        <h5 class="cap-each">Measles Campaign and<br>Child protection</h5>
+                        <p>
+                            We're safeguarding children's rights by raising awareness about child harm and leading a measles campaign to protect the
+                            vulnerable.
+                        </p>
+                        <a href="/public/our-work/measles-campaign-child-protection.html" role="button" class="sec-cta">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card education-poverty">
+                    <div class="text-box"></div>
+                    <h4 class="title cap-each">Preventing Educational<br>Poverty</h4>
+                    <div class="hover-text">
+                        <h5 class="cap-each">Preventing Educational<br>Poverty</h4>
+                        <p>
+                            We're fighting educational poverty by enhancing learning environments, equipping schools with essential
+                            materials, and aiding underserved communities.
+                        </p>
+                        <a href="/public/our-work/educational-poverty.html" role="button" class="sec-cta">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card women-empowerment">
+                    <div class="text-box"></div>
+                    <h4 class="title cap-each">Girls' Education and<br>Women's Empowerment</h4>
+                    <div class="hover-text">
+                        <h5 class="cap-each">Girls' Education and<br>Women's Empowerment</h4>
+                            <p>
+                                We're promoting girls' education and women's economic empowerment. We are committed to gender equality, fostering
+                                opportunities for women and girls.
+                            </p>
+                        <a href="/public/our-work/girls-education-women-empowerment.html" role="button" class="sec-cta">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card child-rights">
+                    <div class="text-box"></div>
+                    <h4 class="title cap-each">Climate Change and<br>Child Rights</h4>
+                    <div class="hover-text">
+                        <h5 class="cap-each">Climate Change and<br>Child Rights</h4>
+                        <p>
+                            We're taking action against climate change's impacts on child rights, focusing on mitigating environmental threats that
+                            affect children's well-being and security.
+                        </p>
+                        <a href="/public/our-work/climate-change-child-rights.html" role="button" class="sec-cta">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card orphan-support">
+                    <div class="text-box"></div>
+                    <h4 class="title cap-each">Orphan Support and<br>Vulnerable Children</h4>
+                    <div class="hover-text">
+                        <h5 class="cap-each">Orphan Support and<br>Vulnerable Children</h4>
+                        <p>
+                            We're offering unwavering support to orphans and vulnerable children, ensuring they receive love, care, and a sense of
+                            belonging.
+                        </p>
+                        <a href="/public/our-work/orphan-support-vulnerable-children.html" role="button" class="sec-cta">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUCCESS STORIES -->
+    <section class="sect cs-grid-2-cards-large">
+        <div class="wrapper">
+            <div class="headline">
+                <h6>Success stories</h6>
+                <h3>Inspiring Stories from<br>the Communities We've Helped!</h3>
+            </div>
+            <div class="stories grid">
+                <div class="col-2">
+                    <div class="image-box st-1"></div>
+                    <div class="text-box">
+                        <h5 class="cap-each">
+                            TIME has identified 523 underserved children at six remote schools in Grand Bassa County
+                        </h5>
+                        <p>
+                            We've identified and connected with 523 underserved children scattered across six remote schools in Grand Bassa County.
+                            These young minds, previously overlooked, are now at the forefront of our commitment to ensuring quality education,
+                            empowering their futures, and breaking the chains of educational poverty.
+                        </p>
+                        <a href="/public/initiatives/success-stories/2022-grand-bassa-county-1.html" class="pri-cta">Read more</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="image-box st-2"></div>
+                    <div class="text-box">
+                        <h5 class="cap-each">
+                            TIME has provided support for 122 students at Kpehpue Town Community School
+                        </h5>
+                        <p>
+                            At Kpehpue Town Community School, Grand Bassa County, we've provided essential support to 122 eager students.
+                            These young learners, previously facing barriers to education, now have access to the tools and resources they need
+                            to thrive. Through our programs, we've not only offered them the gift of knowledge but also a renewed sense of hope.
+                        </p>
+                        <a href="/public/initiatives/success-stories/2022-grand-bassa-county-2.html" class="pri-cta">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-box d-flex f-align-center f-justify-center">
+                <a href="/public/initiatives/success-stories.html" class="pri-cta-with-icon">
+                    view all stories<i class='bx bx-chevrons-right'></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GET INVOLVED -->
+    <section class="sect cs-grid-2-banner">
+        <div class="wrapper d-flex fd-column f-align-center f-justify-center">
+            <h2>Your support can make a difference!</h2>
+            <p>
+                Join us in our mission to empower communities, nurture dreams, and create a brighter, more equitable future for all.
+                Together, we can transform lives.
+            </p>
+            <div class="grid">
+                <a href="/public/get-involve/volunteer.html" class="col-3 volunteer">
+                    <div class="ico-box">
+                        <img src="Images/volunteer.png" class="ico-colored" width="60px" alt="">
+                        <img src="Images/volunteer-white.png" class="ico-white" width="60px" alt="">
+                    </div>
+                    <h5>Volunteer</h5>
+                    <p>Join our team</p>
+                </a>
+                <a href="/public/get-involve/donate.html" class="col-3 make-a-donation">
+                    <div class="ico-box">
+                        <img src="Images/charity.png" class="ico-colored" width="60px" alt="">
+                        <img src="Images/charity-white.png" class="ico-white" width="60px" alt="">
+                    </div>
+                    <h5>Donate</h5>
+                    <p>Make a donation</p>
+                </a>
+                <a href="/public/get-involve/become-a-partner.html" class="col-3 become-a-partner">
+                    <div class="ico-box">
+                        <img src="Images/deal.png" class="ico-colored" width="60px" alt="">
+                        <img src="Images/deal-white.png" class="ico-white" width="60px" alt="">
+                    </div>
+                    <h5>Partner</h5>
+                    <p>Become a partner</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS & BLOG -->
+    <section class="sect cs-grid-2-blog">
+        <div class="wrapper">
+            <div class="headline">
+                <h6 class="cap-each">Our blog</h6>
+                <h3 class="cap-each">Latest news</h3>
+            </div>
+            <div class="grid">
+                <div class="news-card news-1">
+                    <div class="image-box"></div>
+                    <div class="text-box">
+                        <h6>January 26, 2023</h6>
+                        <a href=""><h4>Revitalizing Education: TIME's Efforts to Transform Rural Schools</h4></a>
+                        <div class="read-time">
+                            <i class="fa-regular fa-clock"></i>2 mins
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card news-2">
+                    <div class="image-box"></div>
+                    <div class="text-box">
+                        <h6>January 26, 2023</h6>
+                        <a href=""><h4>Empowering Liberian Youth: A Spotlight on TIME's Girls' Education Program</h4></a>
+                        <div class="read-time">
+                            <i class="fa-regular fa-clock"></i>2 mins
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card news-3">
+                    <div class="image-box"></div>
+                    <div class="text-box">
+                        <h6>January 26, 2023</h6>
+                        <a href=""><h4>Milestones of Hope: Celebrating TIME's Impact on Orphaned Children</h4></a>
+                        <div class="read-time">
+                            <i class="fa-regular fa-clock"></i>2 mins
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div class="sect newsletter">
+        <div class="background">
+            <div class="wrapper">
+                <div class="headline">
+                    <h6 class="cap-each">Our newsletter</h6>
+                    <h3 class="cap-each">Stay connected with us</h3>
+                </div>
+                <div class="form d-flex f-align-center f-justify-center">
+                    <span class="input-group">
+                        <label for="fname">*First name</label><br>
+                        <input class="f-input" type="text" id="fname" name="fname">
+                        <span class="focus-text">Please enter a first name.</span>
+                    </span>
+                    <span class="input-group">
+                        <label for="lname">*Last name</label><br>
+                        <input class="f-input" type="text" id="lname" name="lname">
+                        <span class="focus-text">Please enter a last name.</span>
+                    </span>
+                    <span class="input-group">
+                        <label for="email">*Email address</label><br>
+                        <input class="f-input" type="email" id="email" name="email">
+                        <span class="focus-text">Please enter an email address.</span>
+                    </span>
+                    <span class="submit">
+                        <input type="submit" value="sign up" class="sec-cta submit-btn">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="sect footer">
+        <div class="wrapper d-flex">
+            <div class="col-4 contact">
+                <h5>Contact Us</h5>
+                <p>
+                    Office Location: <br>
+                    Main Office # +231-777-123-456 | Mon-Fri 9:00am-5:00pm GMT <br>
+                    Email us at: timexyz@gmail.com
+                </p>
+            </div>
+            <div class="col-4">
+                <h5>Quick links</h5>
+                <ul>
+                    <li class="cap-each"><a href="#">Who we are</a></li>
+                    <li class="cap-each"><a href="#">Our work</a></li>
+                    <li class="cap-each"><a href="#">Initiatives</a></li>
+                    <li class="cap-each"><a href="#">Leadership</a></li>
+                    <li class="cap-each"><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h5>Get involved</h5>
+                <ul>
+                    <li class="cap-each"><a href="#">Donate</a></li>
+                    <li class="cap-each"><a href="#">Volunteer</a></li>
+                    <li class="cap-each"><a href="#">Become <span class="lower-case">a</span> partner</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h5>Resources</h5>
+                <ul>
+                    <li class="cap-each"><a href="#">New &amp; events</a></li>
+                    <li class="cap-each"><a href="#">TIME Annual report</a></li>
+                    <li class="cap-each"><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-4">
+                <h5>Follow us</h5>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter &#10088; X &#10089;</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper copy-right">
+            <p id="copy">TIME Inc. © 2023 | All rights reserved | Developed by <a href="">Accend.</a></p>
+        </div>
+    </footer>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/data-target-animate.js?v=101"></script>
+
+</body>
+</html>
